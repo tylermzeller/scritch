@@ -5,4 +5,4 @@ try:
     if path.exists(dotenv_path):
         load_dotenv(dotenv_path)
 except ImportError:
-pass
+    pass

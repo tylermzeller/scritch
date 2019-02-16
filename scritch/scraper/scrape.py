@@ -12,5 +12,5 @@ def get_all_links(html):
 
 
 def get_links(html, quantifier=all, **kwargs):
-    return list(filter(lambda a: quantifier([a[key] == val for key, val in kwargs.items()]),
-                       get_all_links()))
+    return list(filter(lambda a: quantifier([val(a.get(key)) for key, val in kwargs.items()]),
+                       get_all_links(html)))
